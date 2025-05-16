@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+import CartIcon from "./CartIcon";
 
 const Header: React.FC = () => {
   return (
@@ -10,13 +11,14 @@ const Header: React.FC = () => {
           <Link to="/" className="flex items-center space-x-2">
             <span className="font-bold text-xl text-indigo-600">ShopBrowser</span>
           </Link>
-          <nav className="flex space-x-4">
+          <nav className="flex items-center space-x-4">
             <Link
               to="/"
               className="text-gray-600 hover:text-indigo-600 transition-colors"
             >
               Products
             </Link>
+            <CartIcon />
           </nav>
         </div>
       </div>

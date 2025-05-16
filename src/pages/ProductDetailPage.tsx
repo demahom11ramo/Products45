@@ -8,10 +8,13 @@ import LoadingSpinner from "../components/LoadingSpinner";
 import ErrorDisplay from "../components/ErrorDisplay";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { useAppDispatch } from "../hooks/useRedux";
+import { addToCart } from "../store/cartSlice";
 
 const ProductDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const productId = parseInt(id || "0", 10);
+  const dispatch = useAppDispatch();
 
   const {
     data: product,
@@ -25,9 +28,10 @@ const ProductDetailPage: React.FC = () => {
   });
 
   const handleAddToCart = () => {
-    toast.success("Added to cart!", {
-      description: "This is a demo feature",
-    });
+    if (product) {
+      dispatch(addToCart(product));
+      toast.success("Added to cart!");
+    }
   };
 
   if (isLoading) {
