@@ -1,11 +1,11 @@
 
 import { Product } from "../types/product";
 
-const API_URL = "https://fakestoreapi.com";
+const API_URL = "https://fakestoreapi.com/products";
 
 export const fetchProducts = async (): Promise<Product[]> => {
   try {
-    const response = await fetch(`${API_URL}/products`);
+    const response = await fetch(`${API_URL}`);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
@@ -19,7 +19,7 @@ export const fetchProducts = async (): Promise<Product[]> => {
 
 export const fetchProductById = async (id: number): Promise<Product> => {
   try {
-    const response = await fetch(`${API_URL}/products/${id}`);
+    const response = await fetch(`${API_URL}/${id}`);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
@@ -33,7 +33,7 @@ export const fetchProductById = async (id: number): Promise<Product> => {
 
 export const fetchCategories = async (): Promise<string[]> => {
   try {
-    const response = await fetch(`${API_URL}/products/categories`);
+    const response = await fetch(`${API_URL}/categories`);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }

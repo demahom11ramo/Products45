@@ -22,7 +22,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           />
         </div>
         <CardContent className="flex-grow p-4">
-          <h3 className="text-sm font-medium line-clamp-2 mb-2">{product.title}</h3>
+          <h3 className="text-sm font-medium line-clamp-2 mb-2.5">{product.title}</h3>
           <div className="flex items-center justify-between">
             <p className="font-semibold text-indigo-600">
               ${product.price.toFixed(2)}
@@ -31,8 +31,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           </div>
         </CardContent>
         <CardFooter className="px-4 pb-4 pt-0">
-          <p className="text-xs text-gray-500 capitalize">
-            {product.category}
+          <p className="line-clamp-2 text-xs text-gray-400 capitalize">
+            {product.description}
           </p>
         </CardFooter>
       </Card>

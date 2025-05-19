@@ -42,7 +42,7 @@ const ProductDetailPage: React.FC = () => {
     return (
       <div className="container mx-auto px-4 py-8">
         <ErrorDisplay
-          message="Failed to load product details. Please try again later."
+          message="Failed to load product details. Please check you internet."
           onRetry={() => refetch()}
         />
         <div className="mt-4">

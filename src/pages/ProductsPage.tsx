@@ -59,7 +59,7 @@ const ProductsPage: React.FC = () => {
   if (productsError) {
     return (
       <ErrorDisplay
-        message="Failed to load products. Please try again later."
+        message="Failed to load products. Please check your internet."
         onRetry={refetchProducts}
       />
     );
