@@ -21,10 +21,13 @@ build
 # Environment
 .env
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.development
+.env.test
+.env.production
 
 # System Files
 .DS_Store
-Thumbs.db 
+Thumbs.db
+
+# Additional files
+README.md 

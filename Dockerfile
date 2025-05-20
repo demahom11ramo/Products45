@@ -1,17 +1,16 @@
 # Build stage
-FROM node:20-alpine as build
+FROM node:18-alpine as build
 
 # Set working directory
 WORKDIR /app
 
 # Copy package files
 COPY package*.json ./
-COPY bun.lockb ./
 
 # Install dependencies
-RUN npm ci
+RUN npm install
 
-# Copy project files
+# Copy all files
 COPY . .
 
 # Build the app
